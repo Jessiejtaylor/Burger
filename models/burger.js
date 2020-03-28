@@ -13,10 +13,14 @@ var burger = {
         })
     },
     // test code for updateOne from Jessie
-    updateOne: function (cbController) {
-        orm.updateOne("burgers", ["devoured"], [true], function (res) {
-            cbController(res);
-        });
+    updateOne: function (id, cbController) {
+        // orm.updateOne("burgers", ["devoured"], [true], function (res) {
+        //     cbController(res);
+        // });
+        var condition = "id=" + id;
+        orm.update("burgers", {
+            devoured:true
+        },condition, cbController)
     }
 
 }

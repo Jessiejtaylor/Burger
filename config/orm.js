@@ -35,7 +35,20 @@ var orm = {
     connection.query("insert into ?? (??, ??) values(?, ?)", [tableName, columnNames[0], columnNames[1], values[0], values[1]], function(err,data){
       cbModel(data)
     })
-  }
+  },
+  // updateOne: function(tableName, columnValues, condition, cbModel){
+  //   var queryString = "UPDATE " + tableName;
+
+  //   queryString += " SET ";
+  //   queryString += objToSql(columnValues);
+  //   queryString += " WHERE ";
+  //   queryString += condition;
+
+  //   connection.query(queryString, function(err,result) {
+  //     if (err) throw err;
+  //     cbModel(result)
+  //   })
+  // }
 
 }
 
